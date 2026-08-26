@@ -1,0 +1,23 @@
+<mat-card >
+  <mat-card-header>
+    <mat-card-title> {{product().name}}</mat-card-title>
+    <mat-card-subtitle>{{product().category}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    @if(product().onSalePrice) {
+    <span class="onSale">On Sale</span>
+    <div class="prices">
+      <p class="onSalePrice">${{product().onSalePrice}}</p>
+      <p style="color: var(--mat-sys-primary);font-weight: bold;text-decoration: line-through;">${{product().price}}</p>
+    </div>
+    }@else{
+    <p style="font-weight: bold;">${{product().price}}</p>
+    }
+    <p>{{product().description}}</p>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button matButton (click)="addToCart()" >{{addButton()}}</button>
+  </mat-card-actions>
+</mat-card>
+
+

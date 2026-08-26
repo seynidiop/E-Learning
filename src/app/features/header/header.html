@@ -1,0 +1,14 @@
+<mat-toolbar class="header" >
+  <div class="logo">
+    <mat-icon  aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+    <h3>Angular Shop</h3>
+  </div>
+  <div class="leftSide">
+    <button matButton="elevated">Produits</button>
+    @if (cartService.totalItems()==0) {
+      <mat-icon aria-hidden="false" aria-label="Example cart icon" fontIcon="shopping_cart"></mat-icon>
+    } @else {
+      <mat-icon [matBadge]="cartService.totalItems()"aria-hidden="false" aria-label="Example cart icon" fontIcon="shopping_cart"></mat-icon>
+    }
+  </div>
+</mat-toolbar>
